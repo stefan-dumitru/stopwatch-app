@@ -1,0 +1,18 @@
+<div class="container mt-5 text-center">
+    <h1>Stopwatch</h1>
+    <div class="display-3">{{ formatTime(time) }}</div>
+  
+    <div class="btn-group mt-3">
+      <button class="btn btn-success" (click)="startStopwatch()" [disabled]="running">Start</button>
+      <button class="btn btn-danger" (click)="stopStopwatch()" [disabled]="!running">Stop</button>
+      <button class="btn btn-warning" (click)="resetStopwatch()">Reset</button>
+      <button class="btn btn-primary" (click)="recordTimestamp()" [disabled]="!running">Timestamp</button>
+    </div>
+  
+    <div class="mt-5">
+      <h4>Timestamps</h4>
+      <ul class="list-group">
+        <li *ngFor="let timestamp of timestamps" class="list-group-item">{{ timestamp }}</li>
+      </ul>
+    </div>
+</div>
